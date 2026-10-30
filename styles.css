@@ -311,6 +311,20 @@ p.lead {
   color: #FFFFFF;
 }
 
+/* Instagram CTA Button */
+.btn-instagram {
+  background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #FCB045 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(225, 48, 108, 0.28);
+}
+
+.btn-instagram:hover {
+  background: linear-gradient(135deg, #963db5 0%, #e0284f 50%, #f77737 100%);
+  box-shadow: 0 12px 30px rgba(225, 48, 108, 0.4);
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+
 /* Gold Accent Button */
 .btn-gold {
   background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
@@ -588,8 +602,15 @@ p.lead {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   gap: 1rem;
   margin-bottom: 2.5rem;
+}
+
+.hero-actions-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
 }
 
 .hero-meta {
@@ -2474,6 +2495,10 @@ textarea.form-control {
 @media (max-width: 480px) {
   .hero-actions {
     flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero-actions-col {
     width: 100%;
   }
   

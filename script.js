@@ -109,7 +109,7 @@ function initProtocolTabs() {
 }
 
 /* --------------------------------------------------------------------------
-   4. ACCORDION TRATAMENTOS REGENERATIVOS
+   4. ACCORDION TRATAMENTOS REGENERATIVOS E BIOREMODELADORES
    -------------------------------------------------------------------------- */
 function initTreatmentsAccordion() {
   const accordionItems = document.querySelectorAll('.treatment-accordion-item');

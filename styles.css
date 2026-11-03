@@ -1,6 +1,6 @@
 /* ==========================================================================
    PROTOCOLO RENASCE® FACIAL — DRA. ÉMILLE NASCIMENTO
-   Estética Avançada & Regenerativa | Pontalina – GO
+   Estética Avançada & Regenerativa | Goiânia-GO e Pontalina-GO
    Design System: Quiet Luxury, Clean, Feminine & Scientific
    ========================================================================== */
 
@@ -16,7 +16,7 @@
   --color-nude: #E8D5CC;
   --color-nude-light: #F7EFEA;
   --color-nude-soft: #FDF9F6;
-  
+
   /* Champagne Gold Accents */
   --color-gold: #B8956A;
   --color-gold-hover: #A37F55;
@@ -25,12 +25,12 @@
   --color-gold-subtle: rgba(184, 149, 106, 0.12);
   --color-gold-border: rgba(184, 149, 106, 0.26);
   --color-gold-glow: rgba(184, 149, 106, 0.22);
-  
+
   /* Regenerative Sage / Clinical Touch */
   --color-sage: #5F7564;
   --color-sage-light: #EEF3EE;
   --color-sage-border: rgba(95, 117, 100, 0.22);
-  
+
   /* Contrast & Charcoal */
   --color-charcoal: #2B2B2B;
   --color-charcoal-deep: #1E1E1E;
@@ -39,25 +39,32 @@
   --color-text-muted: #68625D;
   --color-text-light: #948E88;
   --color-text-on-dark: #FAF6F1;
-  
+
   /* WhatsApp */
   --color-whatsapp: #25D366;
   --color-whatsapp-hover: #20BA5A;
   --color-whatsapp-dark: #128C7E;
-  
+
   /* Typography */
   --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  
+
   /* Spacing */
-  --space-xs: 0.5rem;    /* 8px */
-  --space-sm: 0.75rem;   /* 12px */
-  --space-md: 1.25rem;   /* 20px */
-  --space-lg: 2rem;      /* 32px */
-  --space-xl: 3.5rem;    /* 56px */
-  --space-2xl: 5.5rem;   /* 88px */
-  --space-3xl: 7.5rem;   /* 120px */
-  
+  --space-xs: 0.5rem;
+  /* 8px */
+  --space-sm: 0.75rem;
+  /* 12px */
+  --space-md: 1.25rem;
+  /* 20px */
+  --space-lg: 2rem;
+  /* 32px */
+  --space-xl: 3.5rem;
+  /* 56px */
+  --space-2xl: 5.5rem;
+  /* 88px */
+  --space-3xl: 7.5rem;
+  /* 120px */
+
   /* Border Radius */
   --radius-xs: 6px;
   --radius-sm: 10px;
@@ -65,19 +72,19 @@
   --radius-lg: 24px;
   --radius-xl: 36px;
   --radius-full: 9999px;
-  
+
   /* Shadows */
   --shadow-subtle: 0 4px 20px rgba(43, 43, 43, 0.03);
   --shadow-card: 0 12px 34px rgba(184, 149, 106, 0.09), 0 2px 8px rgba(43, 43, 43, 0.03);
   --shadow-hover: 0 20px 48px rgba(184, 149, 106, 0.16), 0 6px 16px rgba(43, 43, 43, 0.05);
   --shadow-gold: 0 10px 28px rgba(184, 149, 106, 0.32);
   --shadow-float: 0 14px 36px rgba(37, 211, 102, 0.35);
-  
+
   /* Layout */
   --container-max: 1220px;
   --container-narrow: 880px;
   --header-height: 84px;
-  
+
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -87,7 +94,9 @@
 /* --------------------------------------------------------------------------
    2. RESET & BASE STYLES
    -------------------------------------------------------------------------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -100,21 +109,32 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* FIX MOBILE: Impede overflow-x na raiz — proteção de última camada */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.65;
   font-weight: 400;
-  overflow-x: hidden;
   position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-img, svg {
+img,
+video,
+svg,
+iframe {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -123,7 +143,10 @@ a {
   transition: color var(--transition-fast);
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font: inherit;
   color: inherit;
   background: none;
@@ -135,14 +158,20 @@ button {
   cursor: pointer;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
 /* --------------------------------------------------------------------------
    3. TYPOGRAPHY & HEADINGS
    -------------------------------------------------------------------------- */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
   color: var(--color-charcoal);
   font-weight: 500;
@@ -184,12 +213,11 @@ p.lead {
    4. LAYOUT & CONTAINERS
    -------------------------------------------------------------------------- */
 .container {
-  width: 100%;
-  max-width: var(--container-max);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: clamp(1.25rem, 4vw, 2.5rem);
-  padding-right: clamp(1.25rem, 4vw, 2.5rem);
+  /* FIX MOBILE: min() garante padding lateral em qualquer tela sem overflow */
+  width: min(100% - 2.5rem, var(--container-max));
+  margin-inline: auto;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .container-narrow {
@@ -283,7 +311,13 @@ p.lead {
   text-align: center;
   position: relative;
   overflow: hidden;
-  white-space: nowrap;
+  /* FIX MOBILE: Permite quebra de linha em telas pequenas em vez de empurrar o layout */
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  min-width: 0;
+  line-height: 1.25;
 }
 
 .btn svg {
@@ -298,13 +332,15 @@ p.lead {
 }
 
 /* Primary WhatsApp Button */
-.btn-primary, .btn-whatsapp {
+.btn-primary,
+.btn-whatsapp {
   background: linear-gradient(135deg, #25D366 0%, #1EBE5D 100%);
   color: #FFFFFF;
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.28);
 }
 
-.btn-primary:hover, .btn-whatsapp:hover {
+.btn-primary:hover,
+.btn-whatsapp:hover {
   background: linear-gradient(135deg, #22C25D 0%, #18A850 100%);
   box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
   transform: translateY(-2px);
@@ -387,6 +423,10 @@ p.lead {
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--color-gold-border);
   transition: all var(--transition-normal);
+  /* Safe areas: notch e barra de status do iOS/Android */
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 .site-header.scrolled {
@@ -454,11 +494,13 @@ p.lead {
   transition: width var(--transition-normal);
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
   color: var(--color-gold-dark);
 }
 
-.nav-link:hover::after, .nav-link.active::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
@@ -560,11 +602,11 @@ p.lead {
    7. HERO SECTION
    -------------------------------------------------------------------------- */
 .hero-section {
-  padding-top: calc(var(--header-height) + clamp(2.5rem, 5vw, 4.5rem));
+  padding-top: calc(var(--header-height) + env(safe-area-inset-top) + clamp(2.5rem, 5vw, 4.5rem));
   padding-bottom: clamp(3.5rem, 7vw, 6.5rem);
   background: radial-gradient(circle at 80% 20%, rgba(232, 213, 204, 0.45) 0%, transparent 60%),
-              radial-gradient(circle at 10% 80%, rgba(244, 237, 229, 0.8) 0%, transparent 50%),
-              var(--color-bg);
+    radial-gradient(circle at 10% 80%, rgba(244, 237, 229, 0.8) 0%, transparent 50%),
+    var(--color-bg);
   position: relative;
   overflow: hidden;
 }
@@ -759,7 +801,8 @@ p.lead {
 .hero-floating-badge {
   position: absolute;
   bottom: 20px;
-  left: -20px;
+  /* FIX MOBILE: Jamais ultrapassar a borda esquerda do container pai */
+  left: max(-20px, calc(0px - env(safe-area-inset-left, 0px)));
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   padding: 0.9rem 1.4rem;
@@ -928,6 +971,9 @@ p.lead {
   border-radius: var(--radius-md);
   border: 1px solid rgba(184, 149, 106, 0.18);
   transition: transform var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
+  /* FIX MOBILE: Permite que os itens encolham sem empurrar o layout */
+  min-width: 0;
+  flex-wrap: wrap;
 }
 
 .layer-item:hover {
@@ -958,6 +1004,10 @@ p.lead {
   font-weight: 500;
   color: var(--color-charcoal);
   margin: 0;
+  /* FIX MOBILE: Permite encolhimento do título sem empurrar o layout */
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
 }
 
 .layer-depth {
@@ -1119,6 +1169,7 @@ p.lead {
     opacity: 0;
     transform: translateY(12px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1275,7 +1326,7 @@ p.lead {
 }
 
 /* --------------------------------------------------------------------------
-   10. FIOS DO PROTOCOLO RENASCE® (I-THREAD® PHD FARMA)
+   10. FIOS DO PROTOCOLO RENASCE®: FIOS DE PDO E FIOS DE TRAÇÃO
    -------------------------------------------------------------------------- */
 .threads-brand-badge {
   display: inline-flex;
@@ -1607,7 +1658,7 @@ p.lead {
 }
 
 /* --------------------------------------------------------------------------
-   11. TRATAMENTOS REGENERATIVOS (ACCORDION / EXPANDABLE)
+   11. TRATAMENTOS REGENERATIVOS E BIOREMODELADORES (ACCORDION / EXPANDABLE)
    -------------------------------------------------------------------------- */
 .treatments-container {
   display: flex;
@@ -1638,12 +1689,18 @@ p.lead {
   background: var(--color-surface);
   user-select: none;
   gap: 1.5rem;
+  /* FIX MOBILE: Garante que o header não estoure */
+  min-width: 0;
+  overflow: hidden;
 }
 
 .treatment-header-left {
   display: flex;
   align-items: center;
   gap: 1.25rem;
+  /* FIX MOBILE: Permite que o título encolha */
+  min-width: 0;
+  flex: 1;
 }
 
 .treatment-icon-pill {
@@ -1674,6 +1731,10 @@ p.lead {
   font-size: clamp(1.3rem, 2.2vw, 1.75rem);
   margin: 0;
   color: var(--color-charcoal);
+  /* FIX MOBILE: Quebra palavra longa sem empurrar o layout */
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .treatment-toggle-icon {
@@ -1910,6 +1971,8 @@ p.lead {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   align-items: center;
+  /* FIX MOBILE: Garante que os filhos do grid não excedam a largura do card */
+  min-width: 0;
 }
 
 .profile-photo-wrap {
@@ -1941,6 +2004,9 @@ p.lead {
 
 .profile-info {
   padding: clamp(2.5rem, 5vw, 4rem);
+  /* FIX MOBILE: min-width: 0 previne que conteúdo empurre o grid */
+  min-width: 0;
+  overflow: hidden;
 }
 
 .profile-tag {
@@ -2011,7 +2077,8 @@ p.lead {
   overflow: hidden;
 }
 
-.contact-section h2, .contact-section h3 {
+.contact-section h2,
+.contact-section h3 {
   color: #FFFFFF;
 }
 
@@ -2093,11 +2160,17 @@ p.lead {
   font-size: 1.05rem;
   font-weight: 600;
   margin-bottom: 0.2rem;
+  /* FIX MOBILE: strong não deve empurrar o container */
+  min-width: 0;
+  word-break: break-word;
 }
 
 .channel-texts span {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.65);
+  /* FIX MOBILE: span longo não deve ultrapassar a tela */
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 /* Interactive WhatsApp Contact Form */
@@ -2173,7 +2246,10 @@ textarea.form-control {
   background: var(--color-charcoal-deep);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: clamp(3rem, 5vw, 4.5rem);
-  padding-bottom: 2rem;
+  /* FIX MOBILE: Safe area para barra home no iOS/Android */
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.88rem;
 }
@@ -2299,6 +2375,7 @@ textarea.form-control {
     transform: scale(1);
     opacity: 0.6;
   }
+
   100% {
     transform: scale(1.6);
     opacity: 0;
@@ -2367,10 +2444,21 @@ textarea.form-control {
 }
 
 /* Stagger delay classes */
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
+.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.delay-4 {
+  transition-delay: 0.4s;
+}
 
 /* --------------------------------------------------------------------------
    18. RESPONSIVE BREAKPOINTS (MOBILE-FIRST SYSTEM)
@@ -2382,54 +2470,54 @@ textarea.form-control {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .hero-visual {
     max-width: 480px;
     margin: 0 auto;
   }
-  
+
   .concept-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  
+
   .pillars-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .protocol-blocks-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .threads-cards-grid {
     grid-template-columns: 1fr;
     gap: 1.8rem;
   }
-  
+
   .benefits-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .treatment-content-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .profile-card {
     grid-template-columns: 1fr;
   }
-  
+
   .profile-photo-wrap {
     min-height: 320px;
     border-right: none;
     border-bottom: 1px solid var(--color-gold-border);
   }
-  
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -2437,54 +2525,56 @@ textarea.form-control {
 
 /* 768px & Down (Tablets & Large Phones) */
 @media (max-width: 768px) {
-  .nav-menu, .header-cta {
+
+  .nav-menu,
+  .header-cta {
     display: none;
   }
-  
+
   .menu-toggle {
     display: flex;
   }
-  
+
   .hero-floating-badge {
     left: 10px;
     bottom: 10px;
     padding: 0.75rem 1rem;
   }
-  
+
   .indications-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .safety-seal-card {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .post-care-box {
     flex-direction: column;
     text-align: left;
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .tabs-nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
   }
-  
+
   .tab-btn {
     justify-content: center;
     padding: 0.75rem 1rem;
     font-size: 0.88rem;
   }
-  
+
   .protocol-footer-cta {
     flex-direction: column;
     text-align: center;
@@ -2497,27 +2587,27 @@ textarea.form-control {
     flex-direction: column;
     width: 100%;
   }
-  
+
   .hero-actions-col {
     width: 100%;
   }
-  
+
   .btn {
     width: 100%;
   }
-  
+
   .pillars-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .benefits-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .tabs-nav {
     grid-template-columns: 1fr;
   }
-  
+
   .floating-actions {
     bottom: 16px;
     right: 16px;
@@ -2526,18 +2616,21 @@ textarea.form-control {
 
 /* Accessibility: Respect Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  
+
   .fade-up {
     opacity: 1 !important;
     transform: none !important;
   }
-  
+
   .floating-whatsapp::after {
     animation: none !important;
   }
